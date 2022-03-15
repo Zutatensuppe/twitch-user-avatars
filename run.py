@@ -20,6 +20,7 @@ for name in names:
         print(res.text)
         continue
     url = r[2] or r[3]
+    print(f"image url: {url}")
     pat = Path(url)
     img_blob = requests.get(url, timeout=5).content
     with open(f"{name}{pat.suffix}", 'wb') as img_file:
